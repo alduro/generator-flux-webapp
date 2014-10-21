@@ -1,47 +1,88 @@
-# generator-flux-webapp [![Build Status](https://secure.travis-ci.org/alduro/generator-flux-webapp.png?branch=master)](https://travis-ci.org/alduro/generator-flux-webapp)
+# React / Flux &nbsp;Starter Kit
 
-> [Yeoman](http://yeoman.io) generator
+[![Build Status](http://img.shields.io/travis/kriasoft/react-starter-kit/master.svg?style=flat)](http://travis-ci.org/kriasoft/react-starter-kit)
+[![Dependency Status](https://david-dm.org/kriasoft/react-starter-kit.svg?style=flat)](https://david-dm.org/kriasoft/react-starter-kit)
+[![devDependency Status](https://david-dm.org/kriasoft/react-starter-kit/dev-status.svg?style=flat)](https://david-dm.org/kriasoft/react-starter-kit#info=devDependencies)
+[![Tips](http://img.shields.io/gratipay/koistya.svg?style=flat)](https://gratipay.com/koistya)
+[![Gitter](http://img.shields.io/badge/chat-online-brightgreen.svg?style=flat)](https://gitter.im/kriasoft/react-starter-kit)
 
+> This project template is a skeleton for an [isomorphic](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/)
+> web application (SPA) based on Facebook's [React](https://facebook.github.io/react/)
+> library and [Flux](http://facebook.github.io/flux/) architecture. You can use
+> it to quickly bootstrap your web application projects. It contains only
+> client-side components and development tools and is recommended to be paired
+> with a server-side project similar to [ASP.NET Web Application Starter Kit](https://github.com/kriasoft/AspNet-Server-Template).
 
-## Getting Started
+[![Facebook React Starter Kit](https://dl.dropboxusercontent.com/u/16006521/Screens/facebook-react-starter-kit.png)](https://github.com/kriasoft/react-starter-kit)
 
-### What is Yeoman?
+**Demo**: http://reactjs.kriasoft.com
 
-Trick question. It's not a thing. It's this guy:
+### Directory Layout
 
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
-```bash
-npm install -g yo
+```
+.
+├── /build/                     # The folder for compiled output
+├── /config/                    # Configuration files for Webpack, Jest etc.
+├── /docs/                      # Documentation files for the project
+├── /node_modules/              # 3rd-party libraries and utilities
+├── /src/                       # The source code of the application
+│   ├── /actions/               # Action creators that allow to trigger a dispatch to stores
+│   ├── /assets/                # Static files which are copied to ./build on compile
+│   ├── /constants/             # Enumerations used in action creators and stores
+│   ├── /components/            # React components. E.g. Navbar.jsx, Calendar.jsx
+│   ├── /images/                # Graphics (.png, .jpg, .svg etc.)
+│   ├── /layouts/               # Shared layouts for top-level components
+│   ├── /pages/                 # Top-level, URL-bound React components
+│   ├── /stores/                # Stores contain the application state and logic
+│   ├── /styles/                # CSS style sheets (or LESS, SASS, Stylus)
+│   ├── /app.js                 # The application's bootstrap file, entry point
+│   └── /AppDispatcher.js       # The central hub that manages all data flow (see Flux)
+├── /test/                      # Unit, integration and load tests
+│   ├── /e2e/                   # End-to-end tests
+│   └── /unit/                  # Unit tests
+│── gulpfile.js                 # Configuration file for automated builds
+└── package.json                # The list of 3rd party libraries and utilities
 ```
 
-### Yeoman Generators
+### Getting Started
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
+This yeoman generator is based on (github-windows://openRepo/https://github.com/kriasoft/react-starter-kit):
 
-To install generator-flux-webapp from npm, run:
-
-```bash
-npm install -g generator-flux-webapp
+```shell
+$ npm install -g generator-flux-webapp
 ```
 
-Finally, initiate the generator:
 
-```bash
-yo flux-webapp
+```shell
+$ mkdir demo-app
+$ cd demo-app
+$ yo flux-webapp 
+$ gulp
 ```
 
-### Getting To Know Yeoman
+### How to Build
+```shell
+$ gulp build                    # or, `gulp build --release`
+```
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+By default, it builds in debug mode. If you need to build in release mode, add
+`--release` flag.
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+### How to Run
 
+```shell
+$ gulp                          # or, `gulp --release`
+```
 
-## License
+This will start a lightweight development server with LiveReload and
+synchronized browsing across multiple devices and browsers.
 
-MIT
+### How to Deploy
+
+```shell
+$ gulp deploy                   # or, `gulp deploy --production`
+```
+
+You can deploy to different destinations by adding a corresponding flag.
+For example `--production` or `--staging` etc. See the 'deploy' task in
+`gulpfile.js`.
