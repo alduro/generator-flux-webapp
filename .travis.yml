@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-flux-webapp' ]; then cd .. && eval "mv $currentfolder generator-flux-webapp" && cd generator-flux-webapp; fi
+

@@ -1,0 +1,5 @@
+Description:
+    Creates an Flux/Reactjs WebApp.
+
+Example:
+    yo flux-webapp

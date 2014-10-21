@@ -1,0 +1,61 @@
+{
+  "name": "<%= _.slugify(_.humanize(appname)) %>",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap": "^3.2.0",
+    "director": "^1.2.3",
+    "flux": "^2.0.1",
+    "react": "^0.11.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^1.5.8",
+    "del": "^0.1.3",
+    "gulp": "^3.8.8",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-cache": "^0.2.4",
+    "gulp-changed": "^1.0.0",
+    "gulp-csscomb": "^3.0.3",
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-htmlmin": "^0.2.0",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^1.1.0",
+    "gulp-jsbeautifier": "^0.0.3",
+    "gulp-jshint": "^1.8.5",
+    "gulp-less": "^1.3.6",
+    "gulp-load-plugins": "^0.7.0",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-plumber": "^0.6.6",
+    "gulp-render": "^0.0.4",
+    "gulp-replace": "^0.4.0",
+    "gulp-size": "^1.1.0",
+    "gulp-uglify": "^1.0.1",
+    "gulp-util": "^3.0.1",
+    "jest-cli": "^0.1.18",
+    "jshint": "^2.5.6",
+    "jshint-loader": "^0.8.0",
+    "jshint-stylish": "^1.0.0",
+    "jsx-loader": "^0.11.2",
+    "merge-stream": "^0.1.6",
+    "minimist": "^1.1.0",
+    "protractor": "^1.3.1",
+    "psi": "^0.1.4",
+    "react-tools": "^0.11.2",
+    "run-sequence": "^1.0.1",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.4.8",
+    "webpack-dev-server": "^1.6.5"
+  },
+  "jest": {
+    "rootDir": "src",
+    "scriptPreprocessor": "../config/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "react"
+    ]
+  },
+  "scripts": {
+    "start": "gulp",
+    "test": "jest",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update"
+  }
+}
