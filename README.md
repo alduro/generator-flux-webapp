@@ -46,7 +46,7 @@
 
 ### Getting Started
 
-This yeoman generator is based on (github-windows://openRepo/https://github.com/kriasoft/react-starter-kit):
+This yeoman generator is based on https://github.com/kriasoft/react-starter-kit:
 
 ```shell
 $ npm install -g generator-flux-webapp
