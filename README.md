@@ -10,8 +10,7 @@
 > web application (SPA) based on Facebook's [React](https://facebook.github.io/react/)
 > library and [Flux](http://facebook.github.io/flux/) architecture. You can use
 > it to quickly bootstrap your web application projects. It contains only
-> client-side components and development tools and is recommended to be paired
-> with a server-side project similar to [ASP.NET Web Application Starter Kit](https://github.com/kriasoft/AspNet-Server-Template).
+> client-side components and development tools.
 
 [![Facebook React Starter Kit](https://dl.dropboxusercontent.com/u/16006521/Screens/facebook-react-starter-kit.png)](https://github.com/kriasoft/react-starter-kit)
 
