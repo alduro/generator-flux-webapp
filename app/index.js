@@ -52,7 +52,7 @@ var FluxWebappGenerator = yeoman.generators.Base.extend({
       this.template('src/pages/404.html');
       this.template('src/pages/_template.html', 'src/pages/_template.html', context);
       this.src.copy('src/actions/RouteActions.js', 'src/actions/RouteActions.js');
-      this.src.copy('src/pages/index.jsx', 'src/pages/index.jsx');
+      this.src.copy('src/pages/Index.jsx', 'src/pages/Index.jsx');
       this.src.copy('src/pages/Privacy.jsx', 'src/pages/Privacy.jsx');
       this.directory('src/assets/', 'src/assets/');
       this.directory('src/components/', 'src/components/');
