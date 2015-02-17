@@ -87,7 +87,11 @@ gulp.task('images', function() {
 
 // HTML pages
 gulp.task('pages', function() {
-  src.pages = ['src/pages/**/*.jsx', 'src/pages/404.html'];
+  src.pages = { jsx: 'src/pages/**/*.jsx', html: 'src/pages/404.html'};
+  // create pages array for gulp src
+  var pages = Object
+    .keys(src.pages)
+    .map(function (key) { return src.pages[key]; });
   var render = $.render({template: './src/pages/_template.html'})
     .on('error', function(err) { console.log(err); render.end(); });
   return gulp.src(src.pages)
@@ -184,7 +188,8 @@ gulp.task('serve', function(cb) {
 
     gulp.watch(src.assets, ['assets']);
     gulp.watch(src.images, ['images']);
-    gulp.watch(src.pages, ['pages']);
+    gulp.watch(src.pages.html, ['pages']);
+    gulp.watch(src.pages.jsx, ['pages', 'bundle']);
     gulp.watch(src.styles, ['styles']);
     gulp.watch(DEST + '/**/*.*', function(file) {
       browserSync.reload(path.relative(__dirname, file.path));
